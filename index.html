@@ -1,1 +1,422 @@
-Hello World
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elin Andersson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <style>
+
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── TYPSNITT ──────────────────────────────────────────────────────
+       Heading:  Oswald, SemiBold (600), versaler, letter-spacing 0.06em
+       Body:     Playfair Display, Regular
+       Italic:   Playfair Display Italic
+    ─────────────────────────────────────────────────────────────────── */
+    body {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      line-height: 1.65;
+      background: #fff;
+      color: #111;
+    }
+
+    h1, h2 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em; /* ändra till 0.04em (lägre) eller 0.08em (högre) */
+    }
+
+    h3 {
+      font-family: 'Playfair Display', sans-serif;
+      font-weight: 600;
+    }
+
+
+    /* ── HEADER ── */
+    header {
+      text-align: center;
+      padding: 56px 24px 40px;
+
+    }
+    header h1 {
+      font-size: clamp(40px, 8vw, 40px);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: clamp(16px, 2.5vw, 17px);
+      color: #111;
+      margin-bottom: 14px;
+    }
+    header a {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 17px;
+      color: #111;
+    }
+
+    header .read-more-label {
+      font-size: 17px;
+    }
+
+    .about-text {
+      max-width: 620px;
+      margin: 0 auto;
+      padding-top: 16px;
+    }
+
+
+    /* ── PROJEKT ───────────────────────────────────────────────────────
+       Kopiera hela <section class="project">-blocket för varje nytt projekt.
+       Byt --bg till din färg. Lägg till color: #fff om bakgrunden är mörk.
+    ─────────────────────────────────────────────────────────────────── */
+    
+    .project {
+      background: var(--bg, #f0f0f0);
+      padding: 72px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    /* Bild eller video */
+
+    .project-media {
+      width: 100%;
+      max-width: 780px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .project-media img,
+    .project-media video {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+    .project-frame {
+      width: 100%;
+      max-width: 780px;
+      background: var(--frame-bg, #111); /* defaultar till svart */
+      padding: 48px;
+    }
+
+    /* Text */
+    .project-text {
+      text-align: center;
+      max-width: 520px;
+    }
+    .project-text h3 {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+    .project-text h2 {
+      font-size: clamp(26px, 5vw, 26px);
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+    }
+    .project-text p {
+      font-size: 15px;
+      line-height: 1.75;
+      max-width: 54ch;
+      margin: 0 auto;
+    }
+    .project-text p + p {
+      margin-top: 15px;
+    }
+
+    .project-text a {
+      color: inherit;
+      text-underline-offset: 3px;
+    }
+
+    strong {
+      font-family: oswald, sans-serif;
+    }
+
+    /* Extra bilder */
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(var(--cols, 3), 1fr); /* defaultar till 3 om inget anges */
+      gap: 12px;
+      width: 100%;
+      max-width: 680px;
+      padding-top: 30px;
+      padding-bottom: 10px;
+    }
+    .project-gallery img {
+      width: 100%;
+      display: block;
+      border-radius: 5px; /* samma som dina andra bilder, eller 0 */
+    }
+
+     /* Project details */
+    .project-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    input.toggle {
+      display: none;
+    }
+    input.toggle:checked ~ .project-details {
+      max-height: 600px;
+    }
+    
+    .read-more-label {
+      font-size: 14px;
+      display: inline-block;
+      font-style: italic;
+      cursor: pointer;
+      border-bottom: 1px solid currentColor;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+     /* Data */
+    .project-stats {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      padding-top: 40px;
+      border-top: 1px solid rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 520px;
+    }
+    .stat span {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .stat small {
+      font-size: 13px;
+      opacity: 0.6;
+    }
+
+
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 48px 24px;
+      text-align: center;
+      font-size: 15px;
+    }
+    footer a {
+      color: #111;
+      text-underline-offset: 3px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+  <h1>Elin</h1>
+  <p>Digital communication and design</p>
+  <input type="checkbox" class="toggle" id="toggle-info" />
+  <label class="read-more-label" for="toggle-info">About</label>
+  <div class="project-details">
+  <p class="about-text">Hi, I’m Elin. I’m a digital content designer based in Malmö currently managing web content at IKEA. I have over five years of experience in communication and digital platforms. I love designing creative and functional solutions that power business goals. Here are some of the projects I’ve worked on. </div>
+</header>
+
+
+
+
+  <section class="project" style="--bg: #fff;">
+   
+   <!--Byt ut antal kolumner för extra bilder (default är 3):
+    <section class="project" style="--bg: #f5f5f5; --cols: 2;"></section>
+     -->
+
+    <!-- För mörk bakgrund, lägg till color: #fff på sektionen:
+     <section class="project" style="--bg: #c0413a; color: #fff;"> -->
+
+  
+    
+  <div class="project-media">
+      <img src="/Bilder/ikea-ps-2026/ikea-ps-26.png" alt="" />
+    </div>
+
+    <div class="project-text">
+      <h3>Web content + SEO</h3>
+      <h2>IKEA PS 2026 pre-launch</h2>
+    
+    <input type="checkbox" class="toggle" id="toggle-ikea-ps" />
+  <div class="project-details">
+    <p>Lorem ipsum.</p>
+     <!-- För fler bilder:
+      <div class="project-gallery">
+    <img src="bilder/placeholder-img.png" alt="" />
+    <img src="bilder/placeholder-img.png" alt="" />
+    <img src="bilder/placeholder-img.png" alt="" />
+     -->
+
+       <!-- Statistik — ta bort kommentarerna för att aktivera:
+    <div class="project-stats">
+      <div class="stat"><span>56M</span><small>Page views</small></div>
+      <div class="stat"><span>60%</span><small>Organic traffic</small></div>
+      <div class="stat"><span>87%</span><small>Market implementation</small></div>
+    </div>
+    -->
+  </div>
+  <label class="read-more-label" for="toggle-ikea-ps">Read more</label>
+</div>
+
+  </section>
+
+
+
+
+  <section class="project" style="--bg: #fff;">
+    <!--Byt ut antal kolumner för extra bilder (default är 3):
+    <section class="project" style="--bg: #f5f5f5; --cols: 2;"></section>
+     -->
+
+    <!-- För mörk bakgrund, lägg till color: #fff på sektionen:
+     <section class="project" style="--bg: #c0413a; color: #fff;"> -->
+
+  <div class="project-media">
+    <video src="bilder/milan-design-week-2026/milan-design-week.mp4" autoplay muted loop playsinline></video>
+  </div>
+
+    <div class="project-text">
+  <h3>Web content + design </h3>
+  <h2>Milan Design Week</h2>
+
+  <input type="checkbox" class="toggle" id="toggle-milan" />
+  <div class="project-details">
+    <p>Designed and delivered the event page for the IKEA exhibition at Milan Design Week 2026 with a strong focus on storytelling and enhanced user experience to attract visitors to the event, strengthen brand trust, and elevate IKEA as a leader in home furnishing interior design. </p> 
+    <p>The event page was delivered as a global version on IKEA.com/global and a local version on the IKEA Italy e-commerce website IKEA.com/it. The project required collaboration with the project steering group and colleagues in the Italian market to facilitate local activation.</p>
+    <p>Picked up and linked to in <a href="https://www.nytimes.com/2026/04/18/arts/at-milan-design-week-noodling-around-with-an-italian-classic.html" target="_blank">New York Times</a> (April 2026).</p>
+     <!-- För fler bilder:
+      <div class="project-gallery">
+    <img src="bilder/placeholder-img.png" alt="" />
+    <img src="bilder/placeholder-img.png" alt="" />
+    <img src="bilder/placeholder-img.png" alt="" />
+     -->
+
+       <!-- Statistik — ta bort kommentarerna för att aktivera:
+    <div class="project-stats">
+      <div class="stat"><span>56M</span><small>Page views</small></div>
+      <div class="stat"><span>60%</span><small>Organic traffic</small></div>
+      <div class="stat"><span>87%</span><small>Market implementation</small></div>
+    </div>
+    -->
+  </div>
+  <label class="read-more-label" for="toggle-milan">Read more</label>
+</div>
+
+  </section>
+
+
+
+<section class="project" style="--bg: #fff; --frame-bg: #f5f5f5;">
+   
+   <!--Byt ut antal kolumner för extra bilder (default är 3):
+    <section class="project" style="--bg: #f5f5f5; --cols: 2;"></section>
+     -->
+
+    <!-- För mörk bakgrund, lägg till color: #fff på sektionen:
+     <section class="project" style="--bg: #c0413a; color: #fff;"> -->
+
+  
+
+  <div class="project-media">
+    <img src="/Bilder/assr/assr-25.jpeg" alt="" />
+</div>
+
+
+    <div class="project-text">
+      <h3>UX design + web editing</h3>
+      <h2>Ingka Group  Annual Summary <br>& Sustainability Report</h2>
+    
+    <input type="checkbox" class="toggle" id="toggle-ingka-assr" />
+  <div class="project-details">
+    <p>I designed and edited the web version of the Ingka Group Annual Summary and Sustainability Report FY25 on ingka.com with a new design and content structure adapted for ESG reporting and a new on-site navigation with improved user experience, were a new page for all Ingka Group reports was created. </p>
+    <p>The project required close collaboration with the developers to implement the reports page, with reporting and sustainability stakeholders to create the web version and publish the digital report, and coordination with the social media team ahead of go live. </p>
+    <p>Results: <strong>+5%</strong>  uplift in page views and <strong>+8% </strong>increase in report downloads</strong> compared to the previous year's report.</p>
+     <!-- För fler bilder:
+      <div class="project-gallery">
+    <img src="bilder/placeholder-img.png" alt="" />
+    <img src="bilder/placeholder-img.png" alt="" />
+    <img src="bilder/placeholder-img.png" alt="" />
+     -->
+
+       <!-- Statistik — ta bort kommentarerna för att aktivera:
+    <div class="project-stats">
+      <div class="stat"><span>56M</span><small>Page views</small></div>
+      <div class="stat"><span>60%</span><small>Organic traffic</small></div>
+      <div class="stat"><span>87%</span><small>Market implementation</small></div>
+    </div>
+    -->
+  </div>
+  <label class="read-more-label" for="toggle-ingka-assr">Read more</label>
+</div>
+
+  </section>
+
+<section class="project" style="--bg: #fff;">
+   
+   <!--Byt ut antal kolumner för extra bilder (default är 3):
+    <section class="project" style="--bg: #f5f5f5; --cols: 2;"></section>
+     -->
+
+    <!-- För mörk bakgrund, lägg till color: #fff på sektionen:
+     <section class="project" style="--bg: #c0413a; color: #fff;"> -->
+
+  
+    
+  <div class="project-media">
+      <img src="/Bilder/marketplace/large-CF-SecondHandMarketplace-FY26-MultipleUse-Image-02-16x9format.jpg" alt="" />
+    </div>
+
+    <div class="project-text">
+      <h3>Web content + SEO</h3>
+      <h2>IKEA Second-hand Marketplace</h2>
+    
+    <input type="checkbox" class="toggle" id="toggle-ikea-marketplace" />
+  <div class="project-details">
+    <p>To support the launch of the IKEA Second-hand Marketplace, a new digital experience was created for the IKEA e-retail website. The new second-hand platform was not indexed for search, making it crucial to deliver search optimised content to IKEA.com as a gateway and traffic-driver for increased visibility for customers, without competing with the core retail journey.</p>
+    <p>Led the full global web content delivery for IKEA.com, including web and UX design in Figma, SEO optimisation and performance, and stakeholder alignment across Online Merchandising, Sustainability, Strategy, Development and Innovation, and Digital teams. </p>
+    <p>Results: Delivered a global content and URL structure recommendation with a full content package and web guidelines to five markets in the first roll-out in 2025 (continuing in 2026).</p>
+     <!-- För fler bilder:
+      <div class="project-gallery">
+    <img src="bilder/placeholder-img.png" alt="" />
+    <img src="bilder/placeholder-img.png" alt="" />
+    <img src="bilder/placeholder-img.png" alt="" />
+     -->
+
+       <!-- Statistik — ta bort kommentarerna för att aktivera:
+    <div class="project-stats">
+      <div class="stat"><span>56M</span><small>Page views</small></div>
+      <div class="stat"><span>60%</span><small>Organic traffic</small></div>
+      <div class="stat"><span>87%</span><small>Market implementation</small></div>
+    </div>
+    -->
+  </div>
+  <label class="read-more-label" for="toggle-ikea-marketplace">Read more</label>
+</div>
+
+  </section>
+  
+  
+  
+  <footer id="info">
+    <p><a href="mailto:elinandersson705@.com">elinandersson705@gmail.com</a> &nbsp; © 2025</p>
+  </footer>
+
+</body>
+</html>
