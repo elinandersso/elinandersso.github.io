@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elin Andersson</title>
+  <title>Elin</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
@@ -112,7 +112,7 @@
     /* Text */
     .project-text {
       text-align: center;
-      max-width: 520px;
+      max-width: 570px;
     }
     .project-text h3 {
       font-size: 17px;
@@ -128,7 +128,7 @@
     .project-text p {
       font-size: 15px;
       line-height: 1.75;
-      max-width: 54ch;
+      max-width: 60ch;
       margin: 0 auto;
     }
     .project-text p + p {
@@ -157,7 +157,14 @@
     .project-gallery img {
       width: 100%;
       display: block;
-      border-radius: 5px; /* samma som dina andra bilder, eller 0 */
+      border-radius: 0px; /* samma som dina andra bilder, eller 0 */
+    }
+
+    .project-gallery video {
+      width: 100%;
+      display: block;
+      grid-column: 1 / -1;
+      border-radius: 5px;
     }
 
      /* Project details */
@@ -171,7 +178,7 @@
       display: none;
     }
     input.toggle:checked ~ .project-details {
-      max-height: 600px;
+      max-height: 3000px;
     }
     
     .read-more-label {
@@ -184,13 +191,16 @@
       margin-bottom: 10px;
     }
 
+    .label-close { display: none; }
+      input.toggle:checked ~ label .label-open { display: none; }
+      input.toggle:checked ~ label .label-close { display: inline; }
+
      /* Data */
     .project-stats {
       display: flex;
       gap: 48px;
       justify-content: center;
       padding-top: 40px;
-      border-top: 1px solid rgba(0,0,0,0.15);
       width: 100%;
       max-width: 520px;
     }
@@ -223,337 +233,206 @@
 </head>
 <body>
 
-  <header>
+<header>
   <h1>Elin</h1>
   <p>Digital communication and design</p>
   <input type="checkbox" class="toggle" id="toggle-info" />
   <label class="read-more-label" for="toggle-info">About</label>
   <div class="project-details">
-  <p class="about-text">Hi, I’m Elin. I’m a digital content designer based in Malmö currently managing web content at IKEA. I have over five years of experience in communication and digital platforms. I love designing creative and functional solutions that engage audiences and power business goals. Here are some of the projects I’ve worked on. </div>
+  <p class="about-text">Hi, I’m Elin. I’m a digital content designer based in Malmö currently managing web content at IKEA. I have over five years of experience in communication and digital platforms and I love designing creative and functional solutions that engage audiences and power business goals. Scroll down to view some of my work. </div>
 </header>
 
+<!-- Projektsektion — kopiera och klistra in hela blocket för varje nytt projekt. -->
 
+  <!--Byt ut antal kolumner för extra bilder (default är 3):
+  <section class="project" style="--bg: #f5f5f5; --cols: 2;"></section>
+  -->
 
+  <!-- För mörk bakgrund, lägg till color: #fff på sektionen:
+  <section class="project" style="--bg: #c0413a; color: #fff;"> 
+  -->
 
-  <section class="project" style="--bg: #fff;">
-   
-   <!--Byt ut antal kolumner för extra bilder (default är 3):
-    <section class="project" style="--bg: #f5f5f5; --cols: 2;"></section>
-     -->
-
-    <!-- För mörk bakgrund, lägg till color: #fff på sektionen:
-     <section class="project" style="--bg: #c0413a; color: #fff;"> -->
-
-  
-    
+<section class="project" style="--bg: #fff; --cols: 2;">
   <div class="project-media">
-      <img src="/Bilder/ikea-ps-2026/ikea-ps-26.png" alt="" />
+    <img src="/Bilder/ikea-ps-2026/ikea-ps-26.png" alt="" />
     </div>
-
-    <div class="project-text">
-      <h3>Web content + SEO</h3>
-      <h2>IKEA PS 2026 pre-launch</h2>
-    
-    <input type="checkbox" class="toggle" id="toggle-ikea-ps" />
-  <div class="project-details">
-    <p>Lorem ipsum.</p>
-     <!-- För fler bilder:
+  <div class="project-text">
+    <h3>Web content + SEO</h3>
+    <h2>IKEA PS 2026 pre-launch</h2>
+  <input type="checkbox" class="toggle" id="toggle-ikea-ps" />
+    <div class="project-details">
+      <p>Ahead of the PS 2026 collection launch, I designed a pre-launch destination page based on a clear insight from data: during previous launches, customers were navigating to press room articles rather than product pages from organic search. The new page combined product teasers, a countdown feature, and a full site takeover to capture that interest earlier in the journey.</p>
+      <p>Rolled out across 24 markets, the page generated 710,000 views and 10,300 "notify me" sign-ups, with 37% of traffic coming from organic search, showing that pre-launch content can support visibility, loyalty acquisition, and early commercial impact.
+      </p>
       <div class="project-gallery">
-    <img src="bilder/placeholder-img.png" alt="" />
-    <img src="bilder/placeholder-img.png" alt="" />
-    <img src="bilder/placeholder-img.png" alt="" />
-     -->
-
-       <!-- Statistik — ta bort kommentarerna för att aktivera:
-    <div class="project-stats">
-      <div class="stat"><span>56M</span><small>Page views</small></div>
-      <div class="stat"><span>60%</span><small>Organic traffic</small></div>
-      <div class="stat"><span>87%</span><small>Market implementation</small></div>
-    </div>
-    -->
+        <img src="Bilder/ikea-ps-2026/ikea-ps-03.png" alt="" />
+        <img src="Bilder/ikea-ps-2026/ikea-ps-02.png" alt="" />
+      </div> 
+      <div class="project-gallery --cols: 1;">
+        <video src="Bilder/ikea-ps-2026/ikea-ps-pre-launch.mp4" autoplay muted loop playsinline></video>
+      </div>  
   </div>
-  <label class="read-more-label" for="toggle-ikea-ps">Read more</label>
-</div>
+  <label class="read-more-label" for="toggle-ikea-ps">
+    <span class="label-open">Read more</span>
+    <span class="label-close">Close</span>
+  </label>
+</section>
 
-  </section>
-
-
-
-
-  <section class="project" style="--bg: #fff;">
-    <!--Byt ut antal kolumner för extra bilder (default är 3):
-    <section class="project" style="--bg: #f5f5f5; --cols: 2;"></section>
-     -->
-
-    <!-- För mörk bakgrund, lägg till color: #fff på sektionen:
-     <section class="project" style="--bg: #c0413a; color: #fff;"> -->
-
+<section class="project" style="--bg: #fff; --cols: 2;">
   <div class="project-media">
     <video src="Bilder/milan-design-week-2026/milan-design-week.mp4" autoplay muted loop playsinline></video>
-  </div>
-
-    <div class="project-text">
-  <h3>Web content + design </h3>
-  <h2>Milan Design Week</h2>
-
+    </div>
+  <div class="project-text">
+    <h3>Web content + design </h3>
+    <h2>Milan Design Week 2026</h2>
   <input type="checkbox" class="toggle" id="toggle-milan" />
-  <div class="project-details">
-    <p>Designed and delivered the event page for the IKEA exhibition at Milan Design Week 2026 with a strong focus on storytelling and enhanced user experience to attract visitors to the event, strengthen brand trust, and elevate IKEA as a leader in home furnishing interior design. </p> 
-    <p>The event page was delivered as a global version on IKEA.com/global and a local version on the IKEA Italy e-commerce website IKEA.com/it. The project required collaboration with the project steering group and colleagues in the Italian market to facilitate local activation.</p>
-    <p>Picked up and linked to in <a href="https://www.nytimes.com/2026/04/18/arts/at-milan-design-week-noodling-around-with-an-italian-classic.html" target="_blank">New York Times</a> (April 2026).</p>
-     <!-- För fler bilder:
-      <div class="project-gallery">
-    <img src="bilder/placeholder-img.png" alt="" />
-    <img src="bilder/placeholder-img.png" alt="" />
-    <img src="bilder/placeholder-img.png" alt="" />
-     -->
-
-       <!-- Statistik — ta bort kommentarerna för att aktivera:
-    <div class="project-stats">
-      <div class="stat"><span>56M</span><small>Page views</small></div>
-      <div class="stat"><span>60%</span><small>Organic traffic</small></div>
-      <div class="stat"><span>87%</span><small>Market implementation</small></div>
-    </div>
-    -->
-  </div>
-  <label class="read-more-label" for="toggle-milan">Read more</label>
-</div>
-
-  </section>
-
-
-
-<section class="project" style="--bg: #fff; --frame-bg: #f5f5f5;">
-   
-   <!--Byt ut antal kolumner för extra bilder (default är 3):
-    <section class="project" style="--bg: #f5f5f5; --cols: 2;"></section>
-     -->
-
-    <!-- För mörk bakgrund, lägg till color: #fff på sektionen:
-     <section class="project" style="--bg: #c0413a; color: #fff;"> -->
-
-  
-
-  <div class="project-media">
-    <img src="/Bilder/assr/assr-25.jpeg" alt="" />
-</div>
-
-
-    <div class="project-text">
-      <h3>UX design + web editing</h3>
-      <h2>Ingka Group  Annual Summary & Sustainability Report</h2>
-    
-    <input type="checkbox" class="toggle" id="toggle-ingka-assr" />
-  <div class="project-details">
-    <p>I designed and edited the web version of the Ingka Group Annual Summary and Sustainability Report FY25 on ingka.com with a new design and content structure adapted for ESG reporting and a new on-site navigation with improved user experience, were a new page for all Ingka Group reports was created. </p>
-    <p>The project required close collaboration with the developers to implement the reports page, with reporting and sustainability stakeholders to create the web version and publish the digital report, and coordination with the social media team ahead of go live. </p>
-    <p>Results: +5% uplift in page views and +8% increase in report downloads compared to the previous year's report.</p>
-     <!-- För fler bilder:
-      <div class="project-gallery">
-    <img src="bilder/placeholder-img.png" alt="" />
-    <img src="bilder/placeholder-img.png" alt="" />
-    <img src="bilder/placeholder-img.png" alt="" />
-     -->
-
-       <!-- Statistik — ta bort kommentarerna för att aktivera:
-    <div class="project-stats">
-      <div class="stat"><span>56M</span><small>Page views</small></div>
-      <div class="stat"><span>60%</span><small>Organic traffic</small></div>
-      <div class="stat"><span>87%</span><small>Market implementation</small></div>
-    </div>
-    -->
-  </div>
-  <label class="read-more-label" for="toggle-ingka-assr">Read more</label>
-</div>
-
-  </section>
-
-<section class="project" style="--bg: #fff;">
-   
-   <!--Byt ut antal kolumner för extra bilder (default är 3):
-    <section class="project" style="--bg: #f5f5f5; --cols: 2;"></section>
-     -->
-
-    <!-- För mörk bakgrund, lägg till color: #fff på sektionen:
-     <section class="project" style="--bg: #c0413a; color: #fff;"> -->
-
-  
-    
-  <div class="project-media" style="max-width: 700px;">
-      <img src="/Bilder/marketplace/large-CF-SecondHandMarketplace-FY26-MultipleUse-Image-02-16x9format.jpg" alt="" />
-    </div>
-
-    <div class="project-text">
-      <h3>Web content + SEO</h3>
-      <h2>IKEA Second-hand Marketplace</h2>
-    
-    <input type="checkbox" class="toggle" id="toggle-ikea-marketplace" />
-  <div class="project-details">
-    <p>To support the launch of the IKEA Second-hand Marketplace, a new digital experience was created for the IKEA e-retail website. The new second-hand platform was not indexed for search, making it crucial to deliver search optimised content to IKEA.com as a gateway and traffic-driver for increased visibility for customers, without competing with the core retail journey.</p>
-    <p>Led the full global web content delivery for IKEA.com, including web and UX design in Figma, SEO optimisation and performance, and stakeholder alignment across Online Merchandising, Sustainability, Strategy, Development and Innovation, and Digital teams. </p>
-    <p>Results: Delivered a global content and URL structure recommendation with a full content package and web guidelines to five markets in the first roll-out in 2025 (continuing in 2026).</p>
-     <!-- För fler bilder:
-      <div class="project-gallery">
-    <img src="bilder/placeholder-img.png" alt="" />
-    <img src="bilder/placeholder-img.png" alt="" />
-    <img src="bilder/placeholder-img.png" alt="" />
-     -->
-
-       <!-- Statistik — ta bort kommentarerna för att aktivera:
-    <div class="project-stats">
-      <div class="stat"><span>56M</span><small>Page views</small></div>
-      <div class="stat"><span>60%</span><small>Organic traffic</small></div>
-      <div class="stat"><span>87%</span><small>Market implementation</small></div>
-    </div>
-    -->
-  </div>
-  <label class="read-more-label" for="toggle-ikea-marketplace">Read more</label>
-</div>
-
-  </section>
-
-
-<section class="project" style="--bg: #fff;">
-   
-   <!--Byt ut antal kolumner för extra bilder (default är 3):
-    <section class="project" style="--bg: #f5f5f5; --cols: 2;"></section>
-     -->
-
-    <!-- För mörk bakgrund, lägg till color: #fff på sektionen:
-     <section class="project" style="--bg: #c0413a; color: #fff;"> -->
-
-  
-    
-  <div class="project-media">
-      <video src="Bilder/milan-design-week-2023/bts.mp4" autoplay with loop></video>
-    </div>
-
-    <div class="project-text">
-      <h3>PR</h3>
-      <h2>Milan Design Week 2023</h2>
-    
-    <input type="checkbox" class="toggle" id="toggle-mdw-23" />
-  <div class="project-details">
-    <p>Lorem ipsum.</p>
-     <!-- För fler bilder:
-      <div class="project-gallery">
-    <img src="bilder/placeholder-img.png" alt="" />
-    <img src="bilder/placeholder-img.png" alt="" />
-    <img src="bilder/placeholder-img.png" alt="" />
-     -->
-
-       <!-- Statistik — ta bort kommentarerna för att aktivera:
-    <div class="project-stats">
-      <div class="stat"><span>56M</span><small>Page views</small></div>
-      <div class="stat"><span>60%</span><small>Organic traffic</small></div>
-      <div class="stat"><span>87%</span><small>Market implementation</small></div>
-    </div>
-    -->
-  </div>
-  <label class="read-more-label" for="toggle-mdw-23">Read more</label>
-</div>
-
-  </section>
-
-
-
-
-
-  
-<section class="project" style="--bg: #fff;">
-   
-   <!--Byt ut antal kolumner för extra bilder (default är 3):
-    <section class="project" style="--bg: #f5f5f5; --cols: 2;"></section>
-     -->
-
-    <!-- För mörk bakgrund, lägg till color: #fff på sektionen:
-     <section class="project" style="--bg: #c0413a; color: #fff;"> -->
-
-  
-    
-  <div class="project-media">
-      <img src="/Bilder/newsroom/newsroom-03.png" alt="" />
-    </div>
-
-    <div class="project-text">
-      <h3>Web design + editorial</h3>
-      <h2>Newsroom - Ingka Group</h2>
-    
-    <input type="checkbox" class="toggle" id="toggle-newsroom" />
-  <div class="project-details">
-    <p>The Ingka Group newsroom had an outdated structure that limited both the reading experience and publishing possibilities, inflexible in design and optimised neither for search nor for how journalists consume news online.</p>
-    <p>Led the SEO strategy, newsletter email strategy, and CMS implementation. The work involved restructuring the content  for improved navigation and readability, optimising for organic search, and updating the newsletter distribution to grow and retain subscribers. The project required close stakeholder collaboration to balance editorial needs with technical constraints.</p>
-    <p>Results: 37% increase in unique page views and 453% growth in newsletter subscribers between October 2022 and February 2024.</p>
-     <!-- För fler bilder:
-      <div class="project-gallery">
-    <img src="bilder/placeholder-img.png" alt="" />
-    <img src="bilder/placeholder-img.png" alt="" />
-    <img src="bilder/placeholder-img.png" alt="" />
-     -->
-
-       <!-- Statistik — ta bort kommentarerna för att aktivera:
-    <div class="project-stats">
-      <div class="stat"><span>56M</span><small>Page views</small></div>
-      <div class="stat"><span>60%</span><small>Organic traffic</small></div>
-      <div class="stat"><span>87%</span><small>Market implementation</small></div>
-    </div>
-    -->
-  </div>
-  <label class="read-more-label" for="toggle-newsroom">Read more</label>
-</div>
-
-  </section>
-
-  
-<section class="project" style="--bg: #fff;">
-   
-   <!--Byt ut antal kolumner för extra bilder (default är 3):
-    <section class="project" style="--bg: #f5f5f5; --cols: 2;"></section>
-     -->
-
-    <!-- För mörk bakgrund, lägg till color: #fff på sektionen:
-     <section class="project" style="--bg: #c0413a; color: #fff;"> -->
-
-  
-    
-  <div class="project-media" style="max-width: 400px;">
-      <img src="/Bilder/the-link-magazine/april.png" alt="" />
-    </div>
-
-    <div class="project-text">
-      <h3>Editorial</h3>
-      <h2>The Link Magazine</h2>
-    
-    <input type="checkbox" class="toggle" id="toggle-the-link-magazine" />
-  <div class="project-details">
-    <p></p>
-     
-  <!-- Fler bilder:
+    <div class="project-details">
+      <p>I designed and delivered the IKEA exhibition page for Milan Design Week 2026 – a storytelling-led experience built to attract visitors, strengthen brand trust, and reflect IKEA as a leader in home furnishing interior design.</p> 
+      <p>The project launched on IKEA.com (global page) and IKEA.it (local page). The global page was picked up and linked to in the <a href="https://www.nytimes.com/2026/04/18/arts/at-milan-design-week-noodling-around-with-an-italian-classic.html" target="_blank">New York Times</a> (April 2026) and had a 7% increase in page views compared to the previous year. The local page got 20,500 page views  with an average engagement time of 29s (33s globally). The exhibition attracted 45,000 visitors during the week.</p>
     <div class="project-gallery">
-    <img src="Bilder/the-link-magazine/february.png" alt="" />
-    <img src="Bilder/the-link-magazine/april.png" alt="" />
-    <img src="Bilder/the-link-magazine/june.png" alt="" />
-      </div>
-          -->
-
-       <!-- Statistik — ta bort kommentarerna för att aktivera:
-    <div class="project-stats">
-      <div class="stat"><span>56M</span><small>Page views</small></div>
-      <div class="stat"><span>60%</span><small>Organic traffic</small></div>
-      <div class="stat"><span>87%</span><small>Market implementation</small></div>
+      <img src="Bilder/milan-design-week-2026/ikea-italy-mobile.png" alt="" />
+      <img src="Bilder/milan-design-week-2026/global-page-mobile.png" alt="" />
     </div>
-    -->
   </div>
-  <label class="read-more-label" for="toggle-the-link-magazine">Read more</label>
-</div>
+  <label class="read-more-label" for="toggle-milan">
+    <span class="label-open">Read more</span>
+    <span class="label-close">Close</span>
+  </label>
+</section>
 
-  </section>
+<section class="project" style="--bg: #fff; --frame-bg: #f5f5f5; --cols:1">
+  <div class="project-media" style="max-width: 700px;">
+    <img src="/Bilder/assr/assr-25.jpeg" alt="" />
+  </div>
+  <div class="project-text">
+    <h3>UX design + web editing</h3>
+    <h2>Ingka Group  Annual Summary & Sustainability Report</h2>  
+  <input type="checkbox" class="toggle" id="toggle-ingka-assr" />
+    <div class="project-details">
+      <p>I designed and edited the web version of the Ingka Group Annual Summary and Sustainability Report FY25 on ingka.com, adapting the structure for ESG reporting and introducing a new on-site navigation, including a new centralised page for Ingka Groups reports, for improved user experience.</p>
+      <p>The project required close collaboration with developers, sustainability stakeholders, and the social media team ahead of go-live. Page views increased by 5% and report downloads grew by 8% compared to the previous year.</p>
+      <p></p>
+    </div>
+    <label class="read-more-label" for="toggle-ingka-assr">
+      <span class="label-open">Read more</span>
+      <span class="label-close">Close</span>
+    </label>
+  </div>
+</section>
 
+<section class="project" style="--bg: #fff; --cols:1;">
+  <div class="project-media">
+    <img src="/Bilder/marketplace/IKEA second-hand marketplace (1).png" alt="" />
+    </div>
+  <div class="project-text">
+    <h3>Web content + SEO</h3>
+    <h2>IKEA Second-hand Marketplace</h2>
+  <input type="checkbox" class="toggle" id="toggle-ikea-marketplace" />
+    <div class="project-details">
+      <p>To support the launch of IKEA's second-hand marketplace, I led the global web content delivery for IKEA.com, including UX and web design in Figma, SEO strategy, and stakeholder alignment across Online Merchandising, Sustainability, Strategy, and Digital teams.</p>
+      <p>The platform itself was not indexed for search, making IKEA.com a critical entry point. The challenge was driving visibility and traffic to the new experience without competing with the core retail journey. The update included a new URL structure recommendation, a full content package and web guidelines with navigation recommendations, customer journey and activation guideline, and was delivered to five markets in the first roll-out in 2025.</p>
+      <p> </p>
+    <div class="project-gallery">
+      <img src="Bilder/marketplace/marketplace banner.png" alt="" />
+    </div>
+    </div>
+    <label class="read-more-label" for="toggle-ikea-marketplace">
+      <span class="label-open">Read more</span>
+      <span class="label-close">Close</span>
+    </label>
+  </div>
+</section>
 
-  
-  <footer id="info">
-    <p><a href="mailto:elinandersson705@.com">elinandersson705@gmail.com</a> &nbsp; © 2025</p>
-  </footer>
+<section class="project" style="--bg: #fff; --cols: 2;">
+  <div class="project-media">
+    <img src="Bilder/order tracking/Order tracking.png" alt="" />   
+    </div>
+  <div class="project-text">
+    <h3>UX design + product development</h3>
+    <h2>Order tracking redesign</h2>
+  <input type="checkbox" class="toggle" id="toggle-ai" />
+    <div class="project-details">
+      <p>Customers were contacting support even when their orders were progressing as expected, not because something was wrong, but because the experience didn't tell them enough. I led the product strategy, design sprint, and UX design and delivery for a full redesign of IKEA's global order tracking experience, rolled out across 30+ markets in 2025.</p>
+      <p>The solution introduced time-based order states, clearer visual hierarchy, and information previously only visible to customer support. The result was a more transparent experience that reduced unnecessary contacts while increasing customer confidence during normal waiting periods.</p>
+  </div>
+  <label class="read-more-label" for="toggle-ai">
+    <span class="label-open">Read more</span>
+    <span class="label-close">Close</span>
+  </label>
+  </div>
+</section>
+
+<section class="project" style="--bg: #fff; --cols:2;"> 
+  <div class="project-media">
+    <video src="Bilder/milan-design-week-2023/bts-low-res.mov" autoplay with loop></video>
+  </div>
+  <div class="project-text">
+    <h3>PR</h3>
+    <h2>Milan Design Week 2023</h2>
+  <input type="checkbox" class="toggle" id="toggle-mdw-23" />
+    <div class="project-details">
+      <p>Together with a project team, I planned and executed a press conference and 20+ spokesperson interviews with journalists from global media at IKEA's exhibition at Milan Design Week 2023. I also led the production of a behind-the-scenes video of the venue build-up, released as an exclusive with <a href="https://www.designboom.com/design/ikea-80-years-marcus-engman-interview-behind-the-scenes-video-assembling-the-future-together-fuorisalone-04-18-2023/" target="_blank">Designboom</a>. The exhibition attracted 77,500 visitors during the week.</p>
+    <div class="project-gallery" style="--cols:1;">
+      <img src="Bilder/milan-design-week-2023/GC_MilanFairFY23_Venue_Image_104-scaled 1 (1).png" alt="" />
+    </div>
+    <div class="project-gallery" style="--cols:1;">
+      <img src="Bilder/milan-design-week-2023/mdw (1) 1 (1).png" alt="" />
+    </div>
+     <div class="project-gallery" style="--cols:1;">
+      <img src="Bilder/milan-design-week-2023/designboom.png" alt="" />
+    </div>
+    </div>
+    <label class="read-more-label" for="toggle-mdw-23">
+      <span class="label-open">Read more</span>
+      <span class="label-close">Close</span>
+    </label>
+  </div>
+</section>
+
+<section class="project" style="--bg: #fff;">
+  <div class="project-media">
+    <img src="/Bilder/newsroom/newsroom-03.png" alt="" />
+  </div>
+  <div class="project-text">
+    <h3>Web design + editorial</h3>
+    <h2>Ingka Group Newsroom</h2>
+  <input type="checkbox" class="toggle" id="toggle-newsroom" />
+    <div class="project-details">
+      <p>The Ingka Group newsroom had an outdated structure, limited in design, not optimised for search, and not built for how journalists consume news. This project included SEO strategy, CMS restructuring, improved navigation and readability, and a new newsletter approach to grow and retain subscribers.</p>
+      <p>The work required close stakeholder collaboration to balance editorial needs with technical constraints. Results: 37% increase in unique page views and 453% growth in newsletter subscribers between October 2022 and February 2024.</p>
+    </div>
+    <label class="read-more-label" for="toggle-newsroom">
+      <span class="label-open">Read more</span>
+      <span class="label-close">Close</span>
+    </label>
+  </div>
+</section>
+
+<section class="project" style="--bg: #fff; --cols: 2;">
+  <div class="project-media" style="max-width: 400px;">
+    <img src="/Bilder/the-link-magazine/april.png" alt="" />
+  </div>
+  <div class="project-text">
+    <h3>Editorial</h3>
+    <h2>The Link Magazine</h2>
+  <input type="checkbox" class="toggle" id="toggle-the-link-magazine" />
+    <div class="project-details">
+      <p>Editor of the web and print version of the Link magazine, issued bi-monthly with 80,000 readers per year.</p>
+    <div class="project-gallery">
+      <img src="Bilder/the-link-magazine/february.png" alt="" />
+      <img src="Bilder/the-link-magazine/june.png" alt="" />
+    </div>  
+    </div>
+    <label class="read-more-label" for="toggle-the-link-magazine">
+      <span class="label-open">Read more</span>
+      <span class="label-close">Close</span>
+    </label>
+  </div>
+</section>
+
+<footer id="info">
+  <p><a href="mailto:elinandersson705@.com">elinandersson705@gmail.com</a> &nbsp; © 2025</p>
+</footer>
 
 </body>
 </html>
